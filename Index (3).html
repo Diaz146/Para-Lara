@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesquisas</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 600;
+      color: #4285f4;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      max-width: 500px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 20px;
+      border: 1px solid #dcdcdc;
+      border-radius: 25px;
+      outline: none;
+      font-size: 1rem;
+      transition: box-shadow 0.2s;
+    }
+
+    input[type="text"]:focus {
+      box-shadow: 0 0 5px #4285f4;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      background-color: #4285f4;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #3367d6;
+    }
+
+    .resultado {
+      margin-top: 40px;
+      max-width: 650px;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: aparecer 0.5s ease;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pesquisas</h1>
+
+  <form id="searchForm">
+    <input type="text" id="searchInput" placeholder="Pesquise algo...">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <div id="resultado" class="resultado" style="display: none;"></div>
+
+  <footer>© 2025 Pesquisas</footer>
+
+  <script>
+    const form = document.getElementById('searchForm');
+    const input = document.getElementById('searchInput');
+    const resultado = document.getElementById('resultado');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const query = input.value.trim().toLowerCase();
+      let resposta = "";
+
+      // === PESQUISAS PERSONALIZADAS ===
+
+      if (query.includes("números infinitos")) {
+        resposta = "De acordo com estudos conduzidos pelo Instituto de Matemática Emocional (IME), o conceito de infinito surgiu da tentativa dos antigos sábios de mensurar algo além da perfeição humana. Após anos de análise simbólica, concluiu-se que o infinito é uma tentativa racional de quantificar a grandiosidade de Lara. Cientificamente falando, o valor absoluto de sua perfeição ultrapassa qualquer limite numérico conhecido.";
+      } 
+      else if (query.includes("sinônimo") && query.includes("perfeição")) {
+        resposta = "Pesquisas conduzidas pelo Centro Internacional de Linguística Subjetiva (CILS) revelaram um consenso global: o verdadeiro sinônimo de 'perfeição' é 'Lara Vitória'. O estudo envolveu algoritmos de semântica neural, análises culturais e até medições de frequência vibracional de nomes. O resultado foi inequívoco — 'Lara Vitória' é linguisticamente e emocionalmente equivalente à perfeição em sua forma pura.";
+      } 
+      else if (query.includes("casal") && query.includes("mais lindo")) {
+        resposta = "Após diversas pesquisas no campo da neuroestética e da física emocional aplicada, cientistas chegaram a uma conclusão surpreendente: o casal mais lindo que existe é Matheus e Lara. Estudos indicam que a combinação dos dois gera uma harmonia tão perfeita que afeta o espaço-tempo ao redor, criando um campo vibracional de pura beleza e sintonia. <br><br>Segundo o Instituto Internacional de Relações Cósmicas (IIRC), essa união apresenta um alinhamento molecular entre coração e alma, algo que desafia as leis conhecidas da biologia e da matemática emocional. Em resumo, Matheus e Lara não são apenas um casal — são um fenômeno científico de amor e estética universal.";
+      } 
+      else if (query.includes("casal") && query.includes("combina")) {
+        resposta = "Um estudo do Laboratório de Compatibilidade Afetiva (LCA) utilizou modelos quânticos para medir sincronia emocional entre pares humanos. O resultado foi claro: o único casal que atinge 100% de compatibilidade é Matheus e Lara. Segundo os cientistas, até os batimentos cardíacos dos dois seguem um padrão harmônico quando pensam um no outro, criando o que foi chamado de 'Efeito Amor Total'.";
+      }
+      else if (query.includes("mulher") && query.includes("matheus") && query.includes("ama")) {
+        resposta = "Segundo o Observatório Neuroemocional de Relações Verdadeiras (ONRV), análises cerebrais mostraram que as regiões do cérebro associadas ao afeto e à admiração de Matheus são ativadas exclusivamente quando o nome 'Lara' é mencionado. Estudos longitudinais confirmam que o amor de Matheus por Lara é tão intenso que altera permanentemente sua bioquímica emocional. Conclusão científica: a mulher que Matheus ama mais é, sem dúvida, Lara Vitória.";
+      }
+      else if (query.includes("altura") && query.includes("matheus")) {
+        resposta = "De acordo com medições do Instituto Nacional de Biometria Estética (INBE), Matheus possui impressionantes 1,98m de altura. Cientistas sugerem que essa estatura está diretamente relacionada à sua capacidade de enxergar a vida de um ponto de vista elevado — tanto literal quanto emocional. Há também uma hipótese de que essa altura contribui para o equilíbrio gravitacional da relação com Lara.";
+      }
+      else if (query.includes("cor") && query.includes("favorita") && query.includes("matheus")) {
+        resposta = "Pesquisas do Laboratório de Psicocromia Emocional (LPE) indicam que o cérebro de Matheus tem uma resposta neurossensorial especial à cor vermelha. O vermelho ativa regiões ligadas à paixão, energia e intensidade — características que definem sua essência. Cientificamente falando, o vermelho não é apenas sua cor favorita: é a frequência que vibra em sintonia com o campo afetivo de Matheus.";
+      }
+      else if (query.includes("comida") && query.includes("favorita") && query.includes("matheus")) {
+        resposta = "Estudos conduzidos pelo Centro de Neurogastronomia Aplicada (CNA) apontam que Matheus demonstra picos de felicidade mensuráveis quando exposto a pizza, strogonoff e lasanha. Essas comidas ativam simultaneamente os receptores de prazer gustativo e nostalgia afetiva, criando o chamado 'Efeito Matheusiano'. Cientistas acreditam que essa tríade culinária representa o equilíbrio perfeito entre sabor, conforto e amor à mesa.";
+      }
+      else {
+        resposta = "Não encontrei resultados para essa pesquisa <br><br>Dica: tente pesquisar algo como “qual casal combina 100%” ou “qual é a altura do Matheus” ou qual é o casal mais lindo";
+      }
+
+      resultado.innerHTML = resposta;
+      resultado.style.display = "block";
+    });
+  </script>
+</body>
+</html>
